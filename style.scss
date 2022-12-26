@@ -1,0 +1,346 @@
+:root {
+  font-size: 62.5%;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+/*
+    3. Allow percentage-based heights in the application
+  */
+html,
+body {
+  height: 100%;
+}
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+    9. Create a root stacking context
+  */
+
+// HEADER SECTION
+header {
+  height: 80vh;
+  border-bottom-left-radius: 22%;
+  background: url("/images/bg-pattern-intro-mobile.svg"),
+    linear-gradient(
+      135deg,
+      rgba(255, 143, 112, 1) 35%,
+      rgba(255, 61, 84, 1) 85%
+    );
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    padding-top: 4rem;
+  }
+  ul {
+    display: none;
+  }
+  .header__buttons {
+    display: none;
+  }
+  .header__hamburger {
+    height: 3px;
+    width: 3.5rem;
+    background-color: white;
+    position: relative;
+  }
+  .header__hamburger::before {
+    content: " ";
+    top: 10px;
+    position: absolute;
+    height: 3px;
+    width: 3.5rem;
+    background-color: white;
+  }
+  .header__hamburger::after {
+    content: " ";
+    top: -10px;
+    position: absolute;
+    height: 3px;
+    width: 3.5rem;
+    background-color: white;
+  }
+  .flex-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 10rem;
+  }
+  .header__content {
+    padding: 0 3rem;
+    h1 {
+      color: #fff;
+      font-family: "Overpass", sans-serif;
+      font-weight: 600;
+      font-size: 3.5rem;
+      line-height: 1.3;
+      margin-bottom: 1.5rem;
+    }
+    p {
+      font-family: "Overpass", sans-serif;
+      color: rgb(245, 235, 235);
+      font-size: 2rem;
+      line-height: 1.3;
+      margin-bottom: 3rem;
+      font-weight: 400;
+    }
+  }
+  .header__content-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+    .header__content-btn {
+      padding: 1rem 2rem;
+      color: #fff;
+      border: 0;
+      text-transform: capitalize;
+      background-color: transparent;
+      border-radius: 10px;
+      font-family: "Overpass", sans-serif;
+      font-weight: 600;
+      font-size: 1.6rem;
+      cursor: pointer;
+      border-radius: 4rem 1rem;
+      transition: all 0.3s ease-in-out;
+    }
+    .button-active {
+      background-color: #fff;
+      color: hsl(356, 100%, 66%);
+    }
+    .button-active:hover {
+      background-color: hsl(356, 100%, 66%);
+      color: #fff;
+    }
+    .button-regular {
+      border: 1px solid white;
+    }
+    .button-regular:hover {
+      background-color: #fff;
+      color: hsl(356, 100%, 66%);
+    }
+  }
+}
+// MAIN SECTION
+
+main {
+  .first__article {
+    padding: 0 2rem;
+    text-align: center;
+    margin-top: 8rem;
+    margin-bottom: 28rem;
+    &-heading {
+      font-size: 2.7rem;
+      font-family: "Overpass", sans-serif;
+      padding: 0 2rem;
+      margin-bottom: 4rem;
+      color: hsl(208, 49%, 24%);
+    }
+    &-images {
+      position: relative;
+      height: 50vh;
+      margin-bottom: 3rem;
+      &-1 {
+        position: absolute;
+        background-image: url("/images/bg-pattern-circles.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 35rem;
+        width: 100%;
+      }
+      &-2 {
+        position: absolute;
+        background-image: url("/images/illustration-editor-mobile.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 35rem;
+        width: 100%;
+      }
+    }
+    &-description {
+      padding: 0 2rem;
+      text-align: center;
+      h3 {
+        font-size: 2.6rem;
+        font-family: "Overpass", sans-serif;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+        color: hsl(208, 49%, 24%);
+      }
+      p {
+        font-family: "Overpass", sans-serif;
+        color: hsl(207, 13%, 34%);
+        line-height: 1.7;
+        font-size: 1.6rem;
+        margin-bottom: 3rem;
+      }
+    }
+  }
+
+  .second__article {
+    border-bottom-left-radius: 18%;
+    background-color: hsl(235, 23%, 29%);
+    position: relative;
+    text-align: center;
+    padding: 0 4rem;
+    z-index: 1;
+    &-image-1 {
+      position: absolute;
+      top: -20rem;
+      right: 1.5rem;
+      background-image: url("/images/illustration-phones.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      height: 40rem;
+      width: 100%;
+      z-index: -100;
+    }
+    &-content {
+      padding-top: 20rem;
+      padding-bottom: 8rem;
+      h2 {
+        color: #fff;
+        font-family: "Overpass", sans-serif;
+        font-size: 3.5rem;
+        line-height: 1.3;
+        margin-bottom: 2rem;
+      }
+      p {
+        color: hsl(240, 2%, 79%);
+        font-family: "Overpass", sans-serif;
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  .third__article {
+    padding: 0 4rem;
+    margin-bottom: 8rem;
+    .first__article-images {
+      margin-top: 5rem;
+    }
+    .first__article-images-1 {
+      height: 0;
+    }
+    .change {
+      background-image: url("/images/illustration-laptop-mobile.svg") !important;
+    }
+    &-content {
+      text-align: center;
+      h2 {
+        font-size: 2.6rem;
+        font-family: "Overpass", sans-serif;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+        color: hsl(208, 49%, 24%);
+      }
+      p {
+        font-family: "Overpass", sans-serif;
+        color: hsl(207, 13%, 34%);
+        line-height: 1.7;
+        font-size: 1.6rem;
+        margin-bottom: 3rem;
+      }
+    }
+  }
+}
+
+.footer {
+  background-color: hsl(237, 17%, 21%);
+  color: #fff;
+  text-align: center;
+  border-top-right-radius: 30%;
+  padding-bottom: 6rem;
+  &__flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    img {
+      margin-top: 5rem;
+      margin-bottom: 2rem;
+    }
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      padding: 0;
+      a {
+        color: #fff;
+        text-decoration: none;
+        font-family: "Overpass", sans-serif;
+        font-size: 2.4rem;
+        font-weight: 600;
+        text-align: center;
+        transition: all 0.3s ease-in-out;
+        border-bottom: 3px solid transparent;
+      }
+      a:hover {
+        color: hsl(356, 100%, 66%);
+        border-bottom: 3px solid hsl(255, 100%, 66%);
+      }
+    }
+  }
+}

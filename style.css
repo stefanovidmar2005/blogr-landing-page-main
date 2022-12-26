@@ -1,0 +1,341 @@
+:root {
+  font-size: 62.5%;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+
+/*
+    3. Allow percentage-based heights in the application
+  */
+html,
+body {
+  height: 100%;
+}
+
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+    9. Create a root stacking context
+  */
+header {
+  height: 80vh;
+  border-bottom-left-radius: 22%;
+  background: url("/images/bg-pattern-intro-mobile.svg"), linear-gradient(135deg, rgb(255, 143, 112) 35%, rgb(255, 61, 84) 85%);
+  background-position: bottom left;
+  background-repeat: no-repeat;
+}
+header .flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  padding-top: 4rem;
+}
+header ul {
+  display: none;
+}
+header .header__buttons {
+  display: none;
+}
+header .header__hamburger {
+  height: 3px;
+  width: 3.5rem;
+  background-color: white;
+  position: relative;
+}
+header .header__hamburger::before {
+  content: " ";
+  top: 10px;
+  position: absolute;
+  height: 3px;
+  width: 3.5rem;
+  background-color: white;
+}
+header .header__hamburger::after {
+  content: " ";
+  top: -10px;
+  position: absolute;
+  height: 3px;
+  width: 3.5rem;
+  background-color: white;
+}
+header .flex-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 10rem;
+}
+header .header__content {
+  padding: 0 3rem;
+}
+header .header__content h1 {
+  color: #fff;
+  font-family: "Overpass", sans-serif;
+  font-weight: 600;
+  font-size: 3.5rem;
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+}
+header .header__content p {
+  font-family: "Overpass", sans-serif;
+  color: rgb(245, 235, 235);
+  font-size: 2rem;
+  line-height: 1.3;
+  margin-bottom: 3rem;
+  font-weight: 400;
+}
+header .header__content-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+}
+header .header__content-buttons .header__content-btn {
+  padding: 1rem 2rem;
+  color: #fff;
+  border: 0;
+  text-transform: capitalize;
+  background-color: transparent;
+  border-radius: 10px;
+  font-family: "Overpass", sans-serif;
+  font-weight: 600;
+  font-size: 1.6rem;
+  cursor: pointer;
+  border-radius: 4rem 1rem;
+  transition: all 0.3s ease-in-out;
+}
+header .header__content-buttons .button-active {
+  background-color: #fff;
+  color: hsl(356deg, 100%, 66%);
+}
+header .header__content-buttons .button-active:hover {
+  background-color: hsl(356deg, 100%, 66%);
+  color: #fff;
+}
+header .header__content-buttons .button-regular {
+  border: 1px solid white;
+}
+header .header__content-buttons .button-regular:hover {
+  background-color: #fff;
+  color: hsl(356deg, 100%, 66%);
+}
+
+main .first__article {
+  padding: 0 2rem;
+  text-align: center;
+  margin-top: 8rem;
+  margin-bottom: 28rem;
+}
+main .first__article-heading {
+  font-size: 2.7rem;
+  font-family: "Overpass", sans-serif;
+  padding: 0 2rem;
+  margin-bottom: 4rem;
+  color: hsl(208deg, 49%, 24%);
+}
+main .first__article-images {
+  position: relative;
+  height: 50vh;
+  margin-bottom: 3rem;
+}
+main .first__article-images-1 {
+  position: absolute;
+  background-image: url("/images/bg-pattern-circles.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 35rem;
+  width: 100%;
+}
+main .first__article-images-2 {
+  position: absolute;
+  background-image: url("/images/illustration-editor-mobile.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 35rem;
+  width: 100%;
+}
+main .first__article-description {
+  padding: 0 2rem;
+  text-align: center;
+}
+main .first__article-description h3 {
+  font-size: 2.6rem;
+  font-family: "Overpass", sans-serif;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: hsl(208deg, 49%, 24%);
+}
+main .first__article-description p {
+  font-family: "Overpass", sans-serif;
+  color: hsl(207deg, 13%, 34%);
+  line-height: 1.7;
+  font-size: 1.6rem;
+  margin-bottom: 3rem;
+}
+main .second__article {
+  border-bottom-left-radius: 18%;
+  background-color: hsl(235deg, 23%, 29%);
+  position: relative;
+  text-align: center;
+  padding: 0 4rem;
+  z-index: 1;
+}
+main .second__article-image-1 {
+  position: absolute;
+  top: -20rem;
+  right: 1.5rem;
+  background-image: url("/images/illustration-phones.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 40rem;
+  width: 100%;
+  z-index: -100;
+}
+main .second__article-content {
+  padding-top: 20rem;
+  padding-bottom: 8rem;
+}
+main .second__article-content h2 {
+  color: #fff;
+  font-family: "Overpass", sans-serif;
+  font-size: 3.5rem;
+  line-height: 1.3;
+  margin-bottom: 2rem;
+}
+main .second__article-content p {
+  color: hsl(240deg, 2%, 79%);
+  font-family: "Overpass", sans-serif;
+  font-size: 1.6rem;
+}
+main .third__article {
+  padding: 0 4rem;
+  margin-bottom: 8rem;
+}
+main .third__article .first__article-images {
+  margin-top: 5rem;
+}
+main .third__article .first__article-images-1 {
+  height: 0;
+}
+main .third__article .change {
+  background-image: url("/images/illustration-laptop-mobile.svg") !important;
+}
+main .third__article-content {
+  text-align: center;
+}
+main .third__article-content h2 {
+  font-size: 2.6rem;
+  font-family: "Overpass", sans-serif;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: hsl(208deg, 49%, 24%);
+}
+main .third__article-content p {
+  font-family: "Overpass", sans-serif;
+  color: hsl(207deg, 13%, 34%);
+  line-height: 1.7;
+  font-size: 1.6rem;
+  margin-bottom: 3rem;
+}
+
+.footer {
+  background-color: hsl(237deg, 17%, 21%);
+  color: #fff;
+  text-align: center;
+  border-top-right-radius: 30%;
+  padding-bottom: 6rem;
+}
+.footer__flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+}
+.footer__flex img {
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+}
+.footer__flex ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 0;
+}
+.footer__flex ul a {
+  color: #fff;
+  text-decoration: none;
+  font-family: "Overpass", sans-serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  border-bottom: 3px solid transparent;
+}
+.footer__flex ul a:hover {
+  color: hsl(356deg, 100%, 66%);
+  border-bottom: 3px solid hsl(255deg, 100%, 66%);
+}/*# sourceMappingURL=style.css.map */
