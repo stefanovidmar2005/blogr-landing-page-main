@@ -433,6 +433,13 @@ main {
   .third__article {
     padding: 0 4rem;
     margin-bottom: 8rem;
+    @include for-desktop() {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10rem;
+      margin-top: 8rem;
+    }
     .first__article-images {
       margin-top: 5rem;
     }
@@ -444,6 +451,10 @@ main {
     }
     &-content {
       text-align: center;
+      @include for-desktop() {
+        text-align: left;
+        padding: 0 2rem;
+      }
       h2 {
         font-size: 2.6rem;
         font-family: "Overpass", sans-serif;
@@ -468,15 +479,27 @@ main {
   text-align: center;
   border-top-right-radius: 30%;
   padding-bottom: 6rem;
+  @include for-desktop() {
+    padding-bottom: 2rem;
+  }
   &__flex {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 4rem;
+    @include for-desktop() {
+      flex-direction: row;
+      padding: 5rem;
+      gap: 5rem;
+    }
     img {
       margin-top: 5rem;
       margin-bottom: 2rem;
+      @include for-desktop() {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
     }
     ul {
       list-style: none;
@@ -485,6 +508,14 @@ main {
       align-items: center;
       gap: 2rem;
       padding: 0;
+      @include for-desktop() {
+        flex-direction: row;
+      }
+      li {
+        @include for-desktop() {
+          margin-right: 1rem;
+        }
+      }
       a {
         color: #fff;
         text-decoration: none;
