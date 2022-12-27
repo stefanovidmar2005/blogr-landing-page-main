@@ -64,10 +64,19 @@ h5,
 h6 {
   overflow-wrap: break-word;
 }
+.material-symbols-outlined {
+  color: #fff;
+}
 /*
     9. Create a root stacking context
   */
+// Mixing desktop responsive
 
+@mixin for-desktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
 // HEADER SECTION
 header {
   height: 80vh;
@@ -80,24 +89,108 @@ header {
     );
   background-position: bottom left;
   background-repeat: no-repeat;
+  @include for-desktop() {
+    background: url("/images/bg-pattern-intro-desktop.svg"),
+      linear-gradient(
+        135deg,
+        rgba(255, 143, 112, 1) 35%,
+        rgba(255, 61, 84, 1) 85%
+      );
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    border-bottom-left-radius: 20%;
+  }
+
   .flex-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 2rem;
     padding-top: 4rem;
+    @include for-desktop() {
+      padding: 6rem 10rem;
+    }
+  }
+  nav {
+    @include for-desktop() {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
   }
   ul {
     display: none;
+    @include for-desktop() {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      list-style: none;
+    }
+  }
+  li {
+    @include for-desktop() {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 2.5rem;
+    }
+    a {
+      @include for-desktop() {
+        text-decoration: none;
+        color: #fff;
+        font-family: "Overpass", sans-serif;
+        font-size: 1.6rem;
+        transition: all 0.3s ease-in-out;
+        border-bottom-left-radius: 20%;
+        border-bottom-right-radius: 20%;
+      }
+    }
+  }
+  a:hover {
+    border-color: hsl(356, 100%, 66%);
   }
   .header__buttons {
     display: none;
+    @include for-desktop() {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+    }
+    .btn {
+      border: 0;
+      cursor: pointer;
+      color: #fff;
+      font-family: "Overpass", sans-serif;
+      font-size: 1.6rem;
+      background-color: transparent;
+      font-weight: 600;
+      transition: all 0.3s ease-in-out;
+    }
+    .btn-dark:hover {
+      opacity: 0.6;
+    }
+    .btn-active {
+      background-color: #fff;
+      color: hsl(356, 100%, 66%);
+      padding: 1rem 3rem;
+      border-radius: 4rem 1rem;
+    }
+    .btn-active:hover {
+      background-color: hsl(354, 84%, 66%);
+      color: #fff;
+    }
   }
   .header__hamburger {
     height: 3px;
     width: 3.5rem;
     background-color: white;
     position: relative;
+    @include for-desktop() {
+      display: none;
+    }
   }
   .header__hamburger::before {
     content: " ";
@@ -121,6 +214,9 @@ header {
     align-items: center;
     text-align: center;
     margin-top: 10rem;
+    @include for-desktop() {
+      margin-top: 7rem;
+    }
   }
   .header__content {
     padding: 0 3rem;
@@ -131,6 +227,9 @@ header {
       font-size: 3.5rem;
       line-height: 1.3;
       margin-bottom: 1.5rem;
+      @include for-desktop() {
+        font-size: 5rem;
+      }
     }
     p {
       font-family: "Overpass", sans-serif;
@@ -139,6 +238,10 @@ header {
       line-height: 1.3;
       margin-bottom: 3rem;
       font-weight: 400;
+      @include for-desktop() {
+        margin-bottom: 3.3rem;
+        font-size: 2.1rem;
+      }
     }
   }
   .header__content-buttons {
@@ -185,25 +288,40 @@ main {
     text-align: center;
     margin-top: 8rem;
     margin-bottom: 28rem;
+    @include for-desktop() {
+      text-align: left;
+      margin-bottom: 20rem;
+    }
     &-heading {
       font-size: 2.7rem;
       font-family: "Overpass", sans-serif;
       padding: 0 2rem;
       margin-bottom: 4rem;
       color: hsl(208, 49%, 24%);
+      text-align: center;
+      @include for-desktop() {
+        font-size: 3.7rem;
+        margin-bottom: 5rem;
+      }
     }
     &-images {
       position: relative;
-      height: 50vh;
+      min-height: 50vh;
       margin-bottom: 3rem;
+      @include for-desktop() {
+        min-width: 50vh;
+      }
       &-1 {
         position: absolute;
         background-image: url("/images/bg-pattern-circles.svg");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        height: 35rem;
+        min-height: 35rem;
         width: 100%;
+        @include for-desktop() {
+          height: 44rem;
+        }
       }
       &-2 {
         position: absolute;
@@ -211,13 +329,21 @@ main {
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        height: 35rem;
-        width: 100%;
+        min-height: 35rem;
+        min-width: 100%;
+        @include for-desktop() {
+          height: 45rem;
+        }
       }
     }
     &-description {
       padding: 0 2rem;
       text-align: center;
+      @include for-desktop() {
+        text-align: left;
+        flex: 1;
+        padding: 0 10rem;
+      }
       h3 {
         font-size: 2.6rem;
         font-family: "Overpass", sans-serif;
@@ -233,6 +359,15 @@ main {
         margin-bottom: 3rem;
       }
     }
+    .flex-article {
+      @include for-desktop() {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        text-align: left;
+        gap: 1rem;
+      }
+    }
   }
 
   .second__article {
@@ -240,8 +375,15 @@ main {
     background-color: hsl(235, 23%, 29%);
     position: relative;
     text-align: center;
-    padding: 0 4rem;
+    padding: 0 3rem;
     z-index: 1;
+    @include for-desktop() {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5rem;
+      flex-direction: row;
+    }
     &-image-1 {
       position: absolute;
       top: -20rem;
@@ -253,21 +395,37 @@ main {
       height: 40rem;
       width: 100%;
       z-index: -100;
+      @include for-desktop() {
+        display: none;
+      }
     }
     &-content {
       padding-top: 20rem;
       padding-bottom: 8rem;
+      @include for-desktop() {
+        padding-top: 1rem;
+        padding: 5rem 2rem;
+        text-align: left;
+        padding-bottom: 10rem;
+      }
       h2 {
         color: #fff;
         font-family: "Overpass", sans-serif;
         font-size: 3.5rem;
         line-height: 1.3;
         margin-bottom: 2rem;
+        @include for-desktop() {
+          padding-top: 5rem;
+        }
       }
       p {
         color: hsl(240, 2%, 79%);
         font-family: "Overpass", sans-serif;
         font-size: 1.6rem;
+        @include for-desktop() {
+          line-height: 1.7;
+          font-size: 1.8rem;
+        }
       }
     }
   }
